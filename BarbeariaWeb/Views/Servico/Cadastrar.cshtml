@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<h2>Cadastrando um novo serviço</h2>
+
+<form method="post" action="/servico/cadastrar">
+    <div class="form-group">
+        <label for="nome">Nome do serviço</label>
+        <input type="text" name="nome" value="" class="form-control" id="nome" placeholder="Nome do serviço">
+    </div>
+    <div class="form-group">
+        <label for="valor">Valor do Serviço</label>
+        <input type ="text" name="valor" value="" class="form-control" id="valor" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+
+</form>

@@ -1,0 +1,34 @@
+﻿@model List<BarbeariaWeb.Models.Servico>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 style="text-align:center">SERVIÇOS CADASTRADOS</h2>
+<a href="/servico/cadastrar" class="btn btn-success" >Cadastre um novo serviço</a><p/>
+<br/>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Serviço</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var servico in ViewBag.servicos)
+        {
+
+
+            <tr>
+                <th scope="row">@servico.Id</th>
+                <td>@servico.Nome</td>
+                <td>@servico.Valor</td>
+                <td>
+                    <a href="@servico.Id" class="btn btn-primary">Editar</a>
+                    <a href="/servico/excluir/@servico.Id" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
