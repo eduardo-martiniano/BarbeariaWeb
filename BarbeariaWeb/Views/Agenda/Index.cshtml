@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 style="text-align:center">SERVIÇOS AGENDADOS</h2>
+<a href="/servico/cadastrar" class="btn btn-success">Agende seu serviço e horario agora mesmo!</a>
+<p />
+<br />
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Serviço</th>
+            <th scope="col">Valor R$</th>
+            <th scope="col">Data e hora</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var agenda in ViewBag.agendas)
+        {
+
+        <tr>
+            <th scope="row">@agenda.Id</th>
+            <td>@agenda.Servico</td>
+            <td>@agenda.Valor</td>
+            <td>@agenda.DataHora</td>
+        </tr>
+        }
+    </tbody>
+</table>
