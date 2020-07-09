@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Atualizar";
+}
+
+<h2>Atualizar Serviço</h2>
+
+
+<form method="post">
+    <form method="post" action="/servico/atualizar">
+        <div class="form-group">
+            <input type="hidden" value="@ViewBag.Id" id="Id" name="Id"/>
+            <label for="nome">Nome do serviço</label>
+            <input type="text" name="nome" value="@ViewBag.Nome" class="form-control" id="nome" placeholder="Nome do serviço">
+        </div>
+        <div class="form-group">
+            <label for="valor">Valor do Serviço</label>
+            <input type="text" name="valor" value="@ViewBag.Valor" class="form-control" id="valor" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Atualizar</button>
+
+    </form>
+
+
+</form>
+

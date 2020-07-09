@@ -45,6 +45,28 @@ namespace BarbeariaWeb.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult Atualizar(int id)
+        {
+            Servico s = _db.Servicos.Find(id);
+            ViewBag.Nome = s.Nome;
+            ViewBag.Valor = s.Valor;
+            ViewBag.Id = s.Id;
+            return View("Atualizar", s);
+        }
+        [HttpPost]
+        public IActionResult Atualizar([FromForm] Servico s)
+        {
+            _db.Servicos.Update(s);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+
+
+
+
 
     }
 }
