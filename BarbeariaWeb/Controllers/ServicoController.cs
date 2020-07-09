@@ -20,7 +20,7 @@ namespace BarbeariaWeb.Controllers
         public IActionResult Index()
         {
           //  var servicos = _db.Servicos.ToList();
-            ViewBag.servicos = _db.Servicos.ToList(); ;
+            ViewBag.servicos = _db.Servicos.ToList(); 
             return View();
         }
         [HttpGet]

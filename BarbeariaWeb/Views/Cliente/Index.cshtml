@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Logar como cliente</h2>
+
+<form method="post" action="/cliente/logar">
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" value="" class="form-control" id="cpf" placeholder="Digite o seu CPF:">
+    </div>
+    <button type="submit" class="btn btn-primary">Entrar</button>
+    <a href="/cliente/cadastro" class="btn btn-success">Cadastre-se</a>
+</form>
+
+@ViewBag.Erro

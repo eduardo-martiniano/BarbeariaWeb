@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<h2>Cadastre-se como um novo cliente agora mesmo!</h2>
+
+<form method="post" action="/cliente/cadastro">
+    <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" value="" class="form-control" id="cpf" placeholder="CPF:">
+    </div>
+    <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" value="" class="form-control" id="nome" placeholder="Nome e Sobrenome">
+    </div>
+    <div class="form-group">
+        <label for="telefone">Telefone</label>
+        <input type="text" name="telefone" value="" class="form-control" id="telefone" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+    <a href="/cliente/index" class="btn btn-default">Voltar para a pagina de Login</a>
+
+</form>
+<br/>
+@ViewBag.Mensagem
