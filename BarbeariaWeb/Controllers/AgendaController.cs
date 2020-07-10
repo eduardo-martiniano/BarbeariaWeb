@@ -24,7 +24,29 @@ namespace BarbeariaWeb.Controllers
         [HttpGet]
         public IActionResult NovaAgenda()
         {
+            ViewBag.Servicos = _db.Servicos.ToList();
             return View();
+
+        }
+        [HttpPost]
+        public IActionResult NovaAgenda([FromForm] Agenda agenda)
+        {
+            Agenda a = agenda;
+            string nomeServico = a.Servico;
+            double valorServico = 0;
+            foreach (var item in _db.Servicos)
+            {
+                if (nomeServico == item.Nome)
+                {
+                    valorServico = item.Valor;
+                }
+            }
+
+            a.Valor = valorServico;
+            _db.Agendas.Add(a);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index", "Agenda");
 
         }
 

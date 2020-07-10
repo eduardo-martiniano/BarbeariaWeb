@@ -10,6 +10,6 @@ namespace BarbeariaWeb.Models
         public int Id { get; set; }
         public string Servico { get; set; }
         public double Valor { get; set; }
-        public DateTime DataHora { get; set; }
+        public string DataHora { get; set; }
     }
 }

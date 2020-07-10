@@ -43,7 +43,7 @@ namespace BarbeariaWeb.Controllers
             {
                 if (pessoa.Cpf == cpf)
                 {
-                    return RedirectToAction("Index","Servico");
+                    return RedirectToAction("Index","Agenda");
                 }
 
             }
