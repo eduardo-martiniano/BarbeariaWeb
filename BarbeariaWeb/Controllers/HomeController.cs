@@ -21,7 +21,7 @@ namespace BarbeariaWeb.Controllers
             if (login.Email == "eduardo@gmail.com" && login.Senha == "123")
             {
                
-               return RedirectToAction("Index", "Teste");
+               return RedirectToAction("Index", "AdmAgenda");
             }
             else
             {
