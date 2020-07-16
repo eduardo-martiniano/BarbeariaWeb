@@ -8,8 +8,10 @@
 <form method="post" action="/agenda/novaagenda">
     
     <div class="form-group">
-        <label  for="NomeCliente">Nome do Cliente</label>
+        <label for="NomeCliente">Nome do Cliente</label>
         <input name="NomeCliente" id="NomeCliente" type="text" class="form-control" placeholder="Digite seu nome:" />
+        @Html.ValidationMessage("NomeCliente")
+        
     </div>
     <div class="form-group">
         <label  for="servico">Serviço</label>
@@ -25,8 +27,9 @@
         </select>
     </div>
     <div class="form-group">
-        <label  for="dataHora">Data</label>
+        <label for="dataHora">Data</label>
         <input name="dataHora" id="dataHora" type="text" class="form-control" placeholder="Ex: 20/05/2020" />
+        @Html.ValidationMessage("dataHora")
     </div>
 
     <button type="submit" class="btn btn-success">Agendar</button>

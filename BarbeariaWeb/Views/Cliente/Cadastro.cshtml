@@ -9,14 +9,17 @@
     <div class="form-group">
         <label for="cpf">CPF:</label>
         <input type="text" name="cpf" value="" class="form-control" id="cpf" placeholder="CPF:">
+        @Html.ValidationMessage("cpf")
     </div>
     <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" value="" class="form-control" id="nome" placeholder="Nome e Sobrenome">
+        @Html.ValidationMessage("nome")
     </div>
     <div class="form-group">
         <label for="telefone">Telefone</label>
         <input type="text" name="telefone" value="" class="form-control" id="telefone" />
+        @Html.ValidationMessage("telefone")
     </div>
 
     <button type="submit" class="btn btn-success">Cadastrar</button>
@@ -25,3 +28,4 @@
 </form>
 <br/>
 @ViewBag.Mensagem
+

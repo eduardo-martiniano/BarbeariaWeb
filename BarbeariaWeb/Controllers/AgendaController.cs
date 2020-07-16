@@ -31,23 +31,29 @@ namespace BarbeariaWeb.Controllers
         [HttpPost]
         public IActionResult NovaAgenda([FromForm] Agenda agenda)
         {
-            Agenda a = agenda;
-            string nomeServico = a.Servico;
-            double valorServico = 0;
-            foreach (var item in _db.Servicos)
+            if (ModelState.IsValid)
             {
-                if (nomeServico == item.Nome)
+                Agenda a = agenda;
+                string nomeServico = a.Servico;
+                double valorServico = 0;
+                foreach (var item in _db.Servicos)
                 {
-                    valorServico = item.Valor;
+                    if (nomeServico == item.Nome)
+                    {
+                        valorServico = item.Valor;
+                    }
                 }
+                a.Valor = valorServico;                             
+                    _db.Agendas.Add(a);
+                    _db.SaveChanges();
+                    return RedirectToAction("Index", "Agenda");
             }
 
-            a.Valor = valorServico;
-            _db.Agendas.Add(a);
-            _db.SaveChanges();
-
-            return RedirectToAction("Index", "Agenda");
-
+            else
+            {
+                return RedirectToAction("NovaAgenda", "Agenda");
+                
+            }
         }
 
     }

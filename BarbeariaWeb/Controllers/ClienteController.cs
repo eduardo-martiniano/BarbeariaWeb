@@ -29,9 +29,13 @@ namespace BarbeariaWeb.Controllers
         [HttpPost]
         public IActionResult Cadastro([FromForm] Cliente cliente)
         {
-            _db.Add(cliente);
-            _db.SaveChanges();
-            ViewBag.Mensagem = "Cadastrado com sucesso!";
+            if (ModelState.IsValid)
+            {
+                _db.Add(cliente);
+                _db.SaveChanges();
+                ViewBag.Mensagem = "Cadastrado com sucesso!";
+
+            }
             return View();
         }
         [HttpPost]

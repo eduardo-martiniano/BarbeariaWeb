@@ -41,6 +41,8 @@ namespace BarbeariaWeb
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BarbeariaWeb;Integrated Security=True;");
                 
             });
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +68,9 @@ namespace BarbeariaWeb
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            app.UseSession();
+
+
         }
     }
 }
