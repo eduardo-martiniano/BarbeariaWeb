@@ -53,8 +53,8 @@ namespace BarbeariaWeb.Controllers
 
             else
             {
-                
-                return RedirectToAction("NovaAgenda", "Agenda");
+                ViewBag.Servicos = _db.Servicos.ToList();
+                return View();
                 
             }
         }
