@@ -31,10 +31,19 @@ namespace BarbeariaWeb.Controllers
         [HttpPost]
         public IActionResult Cadastrar([FromForm] Servico servico)
         {
+            if (ModelState.IsValid)
+            {
+                _db.Add(servico);
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Servico");
 
-            _db.Add(servico);
-            _db.SaveChanges();
-            return RedirectToAction("Index", "Servico");
+            }
+            else
+            {
+                return View();
+            }
+
+
         }
         [HttpGet]
         public IActionResult Excluir(int id)
@@ -62,11 +71,6 @@ namespace BarbeariaWeb.Controllers
 
             return RedirectToAction("Index");
         }
-
-
-
-
-
 
     }
 }
