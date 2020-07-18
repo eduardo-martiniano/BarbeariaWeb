@@ -24,6 +24,7 @@ namespace BarbeariaWeb.Controllers
         [HttpGet]
         public IActionResult NovaAgenda()
         {
+            
             ViewBag.Servicos = _db.Servicos.ToList();
             return View();
 
@@ -31,6 +32,7 @@ namespace BarbeariaWeb.Controllers
         [HttpPost]
         public IActionResult NovaAgenda([FromForm] Agenda agenda)
         {
+            
             if (ModelState.IsValid)
             {
                 Agenda a = agenda;
@@ -51,6 +53,7 @@ namespace BarbeariaWeb.Controllers
 
             else
             {
+                
                 return RedirectToAction("NovaAgenda", "Agenda");
                 
             }
